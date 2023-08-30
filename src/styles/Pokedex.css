@@ -1,0 +1,11 @@
+.pokedex-container {
+    background-color: red;
+}
+
+.thumbnail-container {
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 2px;
+}

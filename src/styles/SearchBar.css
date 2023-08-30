@@ -1,0 +1,9 @@
+.browse {
+    position: relative;
+}
+
+.browse img {
+    position: absolute;
+    width: 20px;
+    left: 0;
+}

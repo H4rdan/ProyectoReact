@@ -1,0 +1,31 @@
+.thumbnail-content {
+    height: 120px;
+    border: solid 1px red;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    margin: 2px;
+
+}
+
+.pokemon-number {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.pokemon-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    max-width: 50%;
+    margin: auto;
+}
