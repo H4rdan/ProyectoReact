@@ -1,20 +1,21 @@
-import React from 'react'
-import "../../styles/SearchBar.css"
+import React from "react";
+import "../../styles/SearchBar.css";
 
 function SearchBar() {
-
-    return (
-        <nav>
-            <h1>
-                <img src="./icons/pokeball.png" alt="" />
-                Pokédex
-            </h1>
-            <div className="browse">
-                <img src="./icons/search.png" alt="" />
-                <input type="text" placeholder="search" />
-            </div>
-        </nav>
-    )
+  return (
+    <nav>
+      <h1 className="title">
+        <img src="./icons/pokeball.png" alt="" className="poke-logo" />
+        Pokédex
+      </h1>
+      <div className="browse-father">
+        <input type="text" placeholder="Search" className="browse" />
+        <button className="modal">
+          <img src="./icons/tag.png" alt="" />
+        </button>
+      </div>
+    </nav>
+  );
 }
 
-export default SearchBar
+export default SearchBar;

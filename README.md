@@ -1,8 +1,16 @@
-# React + Vite
+# Titulo: Proyecto React - Pokedex - Senpai
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+El proyecto se realizara en el idioma Ingles.
+Tal vez utilizemos el framework Boostrap (particularmente para el carrusell) y tal vez Sweet Alert (en caso de precisar alguna mensaje/alerta) para el proyecto.
+Se dividirá el proyecto en 2 páginas (Home y Description) y cada página en distintos componentes con una estructra de carpetas predefinida.
+Se realizara un CSS para cada componente.
+Decidimos usar Clases e ID con camellCase.
+Se utilizara JavaScript para dar funcionalidad a la pagina.
+Se importará un archivo JSON.
+Se creara un repositorio en GitHub con una rama main. (No se utilizaran mas ramas).
+Por ultimo, se decidio realizar el proyecto Mobile First.
 
-Currently, two official plugins are available:
+# Autores:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Juan Pedro Nodar
+- Javier Pereyra

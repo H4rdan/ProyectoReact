@@ -1,5 +1,5 @@
 .pokedex-container {
-    background-color: red;
+    background-color: rgb(220, 10, 45);
 }
 
 .thumbnail-container {
@@ -8,4 +8,11 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 2px;
+    margin: 5px;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+
+.links {
+    text-decoration: none;
 }

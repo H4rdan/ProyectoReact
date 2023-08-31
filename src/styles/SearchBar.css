@@ -1,9 +1,52 @@
-.browse {
-    position: relative;
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
 }
 
-.browse img {
-    position: absolute;
-    width: 20px;
-    left: 0;
+.poke-logo {
+    margin: 5px;
+}
+
+.browse-father{
+ display: flex;
+ flex-direction: row;
+ margin: 5px 0 20px 0;
+ align-items: center;
+ justify-content: space-evenly;
+}
+
+.browse {
+    background-image:url(/icons/search.png);
+    background-size: 20px;
+    background-position-y: center;
+    background-position: 10px   ;
+    background-repeat:no-repeat;
+    width: 250px;
+    height: 35px;
+    border-radius: 17px;
+    border: none;   
+    padding-left: 40px;
+}
+ 
+
+.modal {
+    width: 35px;
+    height: 35px;    
+    margin-left: 5px;
+    border: none;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.modal img{    
+    
+    object-fit: cover;
+    width: 65%;
+    height: 65%;
+    color: red;
 }
