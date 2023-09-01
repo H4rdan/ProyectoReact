@@ -40,4 +40,5 @@
     object-fit: cover;
     max-width: 40%;
     margin: auto;
+    /* aspect-ratio: 1; */
 }

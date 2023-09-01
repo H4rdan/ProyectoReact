@@ -27,9 +27,9 @@ function Pokedex() {
         <main className="thumbnail-container">
           {pokedata.map((pokemon) => {
             return (
-              <Link to={`/description/${pokemon.number}`} className="links">
+              <Link to={`/description/${pokemon.id}`} className="links">
                 <Thumbnail
-                  number={`#${String(pokemon.number).padStart(3, "0")}`}
+                  number={`#${String(pokemon.id).padStart(3, "0")}`}
                   img={pokemon.img}
                   name={`${pokemon.name
                     .charAt(0)
