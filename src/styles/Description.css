@@ -1,4 +1,16 @@
 .description {
     display: flex;
     flex-direction: column;
+
+}
+
+.botones {
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    width: 10%;
+}
+
+.backward {
+    width: 10%;
 }

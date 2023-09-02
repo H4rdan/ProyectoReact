@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/SearchBar.css";
 
-function SearchBar() {
+function SearchBar(props) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <nav>
       <h1 className="title">
@@ -9,10 +15,35 @@ function SearchBar() {
         Pokédex
       </h1>
       <div className="browse-father">
-        <input type="text" placeholder="Search" className="browse" />
-        <button className="modal">
+        <input
+          type="text"
+          placeholder="Search"
+          className="browse"
+          value={props.searchTerm}
+          onChange={(e) => props.setSearchTerm(e.target.value)} />
+        <button className="modal" onClick={openModal}>
           <img src="./icons/tag.png" alt="" />
         </button>
+        {isModalOpen && (
+          <div className="modal-menu">
+            <label>
+              <input
+                type="checkbox"
+                checked={props.sortBy === "Alphabetic"}
+                onChange={() => props.handleSortChange("Alphabetic")}
+              />
+              Alphabetic
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={props.sortBy === "Number"}
+                onChange={() => props.handleSortChange("Number")}
+              />
+              Number
+            </label>
+          </div>
+        )}
       </div>
     </nav>
   );
