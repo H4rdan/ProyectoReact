@@ -20,28 +20,32 @@ function SearchBar(props) {
           placeholder="Search"
           className="browse"
           value={props.searchTerm}
-          onChange={(e) => props.setSearchTerm(e.target.value)} />
+          onChange={(e) => props.setSearchTerm(e.target.value)}
+        />
         <button className="modal" onClick={openModal}>
           <img src="./icons/tag.png" alt="" />
         </button>
         {isModalOpen && (
-          <div className="modal-menu">
-            <label>
-              <input
-                type="checkbox"
-                checked={props.sortBy === "Alphabetic"}
-                onChange={() => props.handleSortChange("Alphabetic")}
-              />
-              Alphabetic
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={props.sortBy === "Number"}
-                onChange={() => props.handleSortChange("Number")}
-              />
-              Number
-            </label>
+          <div className="modal-container">
+            <div className="modal-menu">
+              <p>Sort by:</p>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={props.sortBy === "Alphabetic"}
+                  onChange={() => props.handleSortChange("Alphabetic")}
+                />
+                Alphabetic
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={props.sortBy === "Number"}
+                  onChange={() => props.handleSortChange("Number")}
+                />
+                Number
+              </label>
+            </div>
           </div>
         )}
       </div>
