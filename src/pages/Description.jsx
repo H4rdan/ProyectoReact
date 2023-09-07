@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/Description.css";
 import { Link } from "react-router-dom";
+import ProgressBar from "../components/description/ProgressBar";
 
 function Description() {
   const { id } = useParams();
@@ -9,6 +10,8 @@ function Description() {
   const parsedId = parseInt(id);
   const showPreviousButton = parsedId > 1;
   const showNextButton = parsedId < 151;
+
+
 
   useEffect(() => {
     fetch(`http://localhost:3000/pokemon/${id}`)
@@ -24,7 +27,7 @@ function Description() {
   }, [id]);
 
   return (
-    <main className="description">
+    <main className={`description ${pokemon?.type[0]}`}>
       <div className="header">
         <div className="header-content">
           <button className="backward">
@@ -42,30 +45,86 @@ function Description() {
         <img src={pokemon?.img} alt="" className="photo" />
       </div>
       <div className="stadistics">
-        <p className="type">{pokemon?.type}</p>
-        <p>About</p>
-        <div className="size">
+        {pokemon && (
+          <div className="type-container">
+            <p className={`type ${pokemon?.type[0]}`}>
+              {pokemon?.type[0].charAt(0).toUpperCase() + pokemon?.type[0].slice(1)}
+            </p>
+            {pokemon?.type[1] && (
+              <p className={`type ${pokemon?.type[1]}`}>
+                {pokemon?.type[1].charAt(0).toUpperCase() + pokemon?.type[1].slice(1)}
+              </p>
+            )}
+          </div>
+        )}
+        <p className="about">About</p>
+        <div className="size-container">
           <div>
-            <p>{pokemon?.weight} kg</p>
-            <p>Weight</p>
+            <div className="size">
+              <img src="../icons/weight.png" alt="" />
+              <p>{pokemon?.weight} kg</p>
+            </div>
+            <p className="size-subtitle">Weight</p>
           </div>
           <div>
-            <p>{pokemon?.height} m</p>
-            <p>Height</p>
+            <div className="size">
+              <img className="rotated-img" src="../icons/straighten.png" alt="" />
+              <p>{pokemon?.height} m</p>
+            </div>
+            <p className="size-subtitle">Height</p>
           </div>
           <div>
-            <p>{pokemon?.ability}</p>
-            <p>Moves</p>
+            {pokemon && (
+              <div className="ability">
+                {pokemon.ability.map((ability, index) => (
+                  <p key={index}>
+                    {ability.charAt(0).toUpperCase() + ability.slice(1)}
+                  </p>
+                ))}
+              </div>)}
+            <p className="size-subtitle">Moves</p>
           </div>
         </div>
-        <p>{pokemon?.txt}</p>
-        <p>Base Stats</p>
-        <p>HP 0{pokemon?.hp}</p>
-        <p>ATK 0{pokemon?.attack}</p>
-        <p>DEF 0{pokemon?.defense}</p>
-        <p>SATK 0{pokemon?.special_attack}</p>
-        <p>SDEF 0{pokemon?.special_defense}</p>
-        <p>SPD 0{pokemon?.speed}</p>
+        <div className="poke-info">
+          <p>{pokemon?.txt}</p>
+        </div>
+        <p className="base-stats">Base Stats</p>
+        <div className="stats-container">
+          <div className="stats-title">
+            <p>HP</p>
+            <p>ATK</p>
+            <p>DEF</p>
+            <p>SATK</p>
+            <p>SDEF</p>
+            <p>SPD</p>
+          </div>
+          <div className="stats-props">
+            <div className="stats-bars">
+              <p>{` ${String(pokemon?.hp).padStart(3, "0")}`}</p>
+              <ProgressBar value={pokemon?.hp} maxValue={200} />
+            </div>
+            <div className="stats-bars">
+              <p>{` ${String(pokemon?.attack).padStart(3, "0")}`}</p>
+              <ProgressBar value={pokemon?.attack} maxValue={200} />
+            </div>
+            <div className="stats-bars">
+              <p>{` ${String(pokemon?.defense).padStart(3, "0")}`}</p>
+              <ProgressBar value={pokemon?.defense} maxValue={200} />
+            </div>
+            <div className="stats-bars">
+              <p>{` ${String(pokemon?.special_attack).padStart(3, "0")}`}</p>
+              <ProgressBar value={pokemon?.special_attack} maxValue={200} />
+            </div>
+            <div className="stats-bars">
+              <p>{` ${String(pokemon?.special_defense).padStart(3, "0")}`}</p>
+              <ProgressBar value={pokemon?.special_defense} maxValue={200} />
+            </div>
+            <div className="stats-bars">
+              <p>{` ${String(pokemon?.speed).padStart(3, "0")}`}</p>
+              <ProgressBar value={pokemon?.speed} maxValue={200} />
+            </div>
+          </div>
+        </div>
       </div>
       <div className="botones">
         {showPreviousButton && (

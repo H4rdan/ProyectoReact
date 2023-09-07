@@ -9,8 +9,8 @@ function SearchBar(props) {
   };
 
   return (
-    <nav>
-      <h1 className="title">
+    <nav className="container">
+      <h1 className="pokedex-title">
         <img src="./icons/pokeball.png" alt="" className="poke-logo" />
         Pokédex
       </h1>
