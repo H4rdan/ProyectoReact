@@ -31,22 +31,24 @@ function SearchBar(props) {
             <div className="modal-container">
               <div className="modal-menu">
                 <p>Sort by:</p>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={props.sortBy === "Alphabetic"}
-                    onChange={() => props.handleSortChange("Alphabetic")}
-                  />
-                  Alphabetic
-                </label>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={props.sortBy === "Number"}
-                    onChange={() => props.handleSortChange("Number")}
-                  />
-                  Number
-                </label>
+                <div className="modal-order">
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={props.sortBy === "Alphabetic"}
+                      onChange={() => props.handleSortChange("Alphabetic")}
+                    />
+                    Name
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={props.sortBy === "Number"}
+                      onChange={() => props.handleSortChange("Number")}
+                    />
+                    Number
+                  </label>
+                </div>
               </div>
             </div>
           </div>

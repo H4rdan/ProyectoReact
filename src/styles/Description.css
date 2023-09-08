@@ -8,11 +8,6 @@
     background-color: blueviolet;
 }
 
-.description-content {
-    max-width: 670px;
-    margin: 0 auto;
-}
-
 .header {
     /* background-color: green; */
     color: white;
@@ -288,4 +283,11 @@
 .water {
     background-color: #6493EB;
     color: #6493EB;
+}
+
+@media (min-width: 670px) {
+    .description-content {
+        max-width: 670px;
+        margin: 0 auto;
+    }
 }
