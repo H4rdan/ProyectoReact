@@ -8,12 +8,17 @@
     background-color: blueviolet;
 }
 
+.description-content {
+    max-width: 670px;
+    margin: 0 auto;
+}
+
 .header {
     /* background-color: green; */
     color: white;
     display: flex;
     align-items: start;
-    height: 33%;
+    /* height: 33%; */
     padding: 10px;
     z-index: 1;
 }
@@ -30,19 +35,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 45%;
-    max-height: 30%;
+    position: relative;
+}
+
+.photo-container button {
+    background-color: transparent;
+    border: none;
     position: absolute;
-    left: 28%;
-    top: 8%;
+    bottom: 20px;
+}
+
+.previous {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
 }
 
 .photo {
     /* aspect-ratio: 2; */
-    padding: 15%;
-    margin-top: 25px;
     z-index: 2;
-    max-width: 100%;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    object-position: bottom;
+    margin-bottom: -56px;
 }
 
 .stadistics {
@@ -64,7 +82,8 @@
 }
 
 .size img {
-    max-width: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 .rotated-img {
@@ -86,38 +105,28 @@
 }
 
 .poke-info {
-    margin: 25px;
+    margin: 15px 25px 15px 25px;
+    font-size: 12px;
 }
 
 .poke-info p {
     color: black;
 }
 
-.botones {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 3;
-    position: absolute;
-    top: 27%;
-}
-
-.botones button {
-    background-color: transparent;
-    border: none;
-}
-
-
 .backward {
-    width: 7%;
-    height: 7%;
+    width: 48px;
+    height: 48px;
     display: flex;
     justify-content: start;
     align-items: start;
     background-color: transparent;
     border: none;
     z-index: 3;
+}
+
+.id {
+    width: 48px;
+    height: 48px;
 }
 
 .type {
@@ -142,7 +151,7 @@
 
 .about {
     text-align: center;
-    margin: 25px;
+    margin: 15px;
     font-size: 25px;
     font-weight: bold;
 }
@@ -151,33 +160,32 @@
     text-align: center;
     font-size: 25px;
     font-weight: bold;
-    margin: 20px;
+    margin: 10px;
 }
 
 .stats-container {
     display: flex;
-    width: 95%;
+    padding: 0 25px;
 }
 
 .stats-title {
     display: flex;
     flex-direction: column;
     align-items: end;
-    gap: 5px;
+    gap: 3px;
     border-right: solid 1px black;
-    width: 20%;
     padding-right: 15px;
 }
 
 .stats-props {
-    width: 80%;
+    flex: 1 1;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
     padding-left: 15px;
 }
 
-.stats-props {
+.stats-props p {
     color: black;
 }
 
@@ -186,6 +194,10 @@
     justify-content: start;
     align-items: center;
     gap: 15px;
+}
+
+.stats-bars p {
+    width: 20px;
 }
 
 .fire {

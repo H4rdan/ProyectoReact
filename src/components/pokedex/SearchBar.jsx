@@ -10,6 +10,7 @@ function SearchBar(props) {
 
   return (
     <nav className="container">
+
       <h1 className="pokedex-title">
         <img src="./icons/pokeball.png" alt="" className="poke-logo" />
         Pokédex
@@ -26,29 +27,32 @@ function SearchBar(props) {
           <img src="./icons/tag.png" alt="" />
         </button>
         {isModalOpen && (
-          <div className="modal-container">
-            <div className="modal-menu">
-              <p>Sort by:</p>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={props.sortBy === "Alphabetic"}
-                  onChange={() => props.handleSortChange("Alphabetic")}
-                />
-                Alphabetic
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={props.sortBy === "Number"}
-                  onChange={() => props.handleSortChange("Number")}
-                />
-                Number
-              </label>
+          <div className="modal-background">
+            <div className="modal-container">
+              <div className="modal-menu">
+                <p>Sort by:</p>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={props.sortBy === "Alphabetic"}
+                    onChange={() => props.handleSortChange("Alphabetic")}
+                  />
+                  Alphabetic
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={props.sortBy === "Number"}
+                    onChange={() => props.handleSortChange("Number")}
+                  />
+                  Number
+                </label>
+              </div>
             </div>
           </div>
         )}
       </div>
+
     </nav>
   );
 }
